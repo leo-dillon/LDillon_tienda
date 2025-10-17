@@ -1,19 +1,25 @@
-import logo from "/image/logo/lightLogo.svg"
-import darkLogo from "/image/logo/darkLogo.svg"
+import logo from "/image/LDillon/logo/lightLogo.svg"
+import darkLogo from "/image/LDillon/logo/darkLogo.svg"
 
-import { useDarkMode } from "../utils/context/ThemesContext"
+import { Nav } from "../nav/Nav"
+import { IconAncord } from "../ancord/IconAncord"
 
 export const Header = () => {
-    const { toggleTheme, isDark } = useDarkMode()
     return (
         <header
-            className="w-full
+            className="w-full px-8 py-4
             flex flex-row justify-between items-center
         ">
-            <picture className=" p-2 rounded
-            dark:bg-transparent">
-                <img src={( isDark ) ? logo: darkLogo} alt="Logo de Weather Now" />
-            </picture>
+            <div className="flex items-center gap-2">
+                <IconAncord  text="Volver al inicio" img={ darkLogo } darkImg={ logo } to="/"/>
+                <h1 className="
+                    text-xl text-stone-800
+                    dark:text-stone-300
+                ">
+                    Tienda - LDillon 
+                </h1>
+            </div>
+            <Nav />
         </header>
     )
 }
