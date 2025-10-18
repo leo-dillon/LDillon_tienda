@@ -10,7 +10,7 @@ import brandLinkedin from "/icons/redes/brand-linkedin.svg"
 
 export const Footer = () => {
     return (
-        <footer className=" py-8
+        <footer className=" py-8 bg-zinc-300 dark:bg-zinc-800
             flex md:flex-row flex-col items-center justify-around gap-6
         ">
             <LDillon_footer />
@@ -29,7 +29,7 @@ export const Footer = () => {
                 ">Mis Redes:</p>
                 <div className="flex gap-2">
                     <IconAncord text="Ir a instagram"   img={instagram}             darkImg={instagram}             to="#instagram" />
-                    <IconAncord text="Ir a github"      img={brandDarkGithub}       darkImg={brandGithub}           to="#github"    />
+                    <IconAncord text="Ir a github"      img={brandDarkGithub}       darkImg={brandGithub}           to="https://github.com/leo-dillon/LDillon_tienda"    />
                     <IconAncord text="Ir a linkedin"    img={brandDarkLinkedin}     darkImg={brandLinkedin}         to="#linkedin"  />
                 </div>
             </div>

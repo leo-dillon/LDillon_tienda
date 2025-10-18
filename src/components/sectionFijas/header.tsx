@@ -7,7 +7,7 @@ import { IconAncord } from "../ancord/IconAncord"
 export const Header = () => {
     return (
         <header
-            className="w-full px-8 py-4
+            className="w-full px-8 py-4 bg-zinc-300 dark:bg-zinc-800
             flex flex-row justify-between items-center
         ">
             <div className="flex items-center gap-2">
