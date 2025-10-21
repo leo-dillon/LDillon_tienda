@@ -5,11 +5,11 @@ import { FeatureGrid } from "../section/FeatureGrid"
 export const Home = () => {
     return(
         <div className="flex flex-col gap-6">
-        <Banner />
+            <Banner />
 
-        <FeatureGrid />
+            <FeatureGrid />
 
-        <NewSlatter img={0}/>
+            <NewSlatter img={0}/>
         </div>
     )
 }

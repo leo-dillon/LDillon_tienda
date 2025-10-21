@@ -7,7 +7,7 @@ export const NotFound = () => {
   const { isDark } = useDarkMode()
 
   return (
-    <section className={`w-full flex flex-col justify-center items-center gap-6 
+    <section className={`w-full flex-1 flex flex-col justify-center items-center gap-6 
        text-stone-800 
        dark:text-stone-100 transition-colors duration-500`}>
       

@@ -10,7 +10,7 @@ import brandLinkedin from "/icons/redes/brand-linkedin.svg"
 
 export const Footer = () => {
     return (
-        <footer className=" py-8 bg-zinc-300 dark:bg-zinc-800
+        <footer className="mt-12 py-8 bg-zinc-300 dark:bg-zinc-800
             flex md:flex-row flex-col items-center justify-around gap-6
         ">
             <LDillon_footer />

@@ -7,7 +7,7 @@ export const Layout = () => {
     <>
       <Header />
       <main className="
-        w-full
+        w-full mt-8
         min-h-screen 
         flex flex-col
       ">
