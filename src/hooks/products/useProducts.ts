@@ -1,8 +1,13 @@
 import { useEffect, useState } from "react"
 import { getProducts, type Products_Variants_types } from "../../actions/products"
 
+interface Props {
+    filters?: string[],
+    page?: number,
 
-export const useProducts = ({ filters = [] }: { filters?: string[] }) => {
+}
+
+export const useProducts = ({ filters = [], page = 1 }: Props) => {
     const [ dataProducts, setDataProducts ] = useState<Products_Variants_types[]>()
     const [ isLoading, setIsLoading ] = useState<boolean>(false)
     const [ error, setError ] = useState<string | null>(null)
@@ -11,7 +16,7 @@ export const useProducts = ({ filters = [] }: { filters?: string[] }) => {
         const fetchData = async () => {
             try {
                 setIsLoading(true)
-                const data = await getProducts({ filters })
+                const data = await getProducts({ filters, page })
 
                 if(data == undefined) setDataProducts([])
                 
@@ -26,7 +31,7 @@ export const useProducts = ({ filters = [] }: { filters?: string[] }) => {
         }
 
         fetchData()
-    },[filters])
+    },[filters, page])
 
     return { dataProducts, isLoading, error }
 }

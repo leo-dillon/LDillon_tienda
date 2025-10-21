@@ -1,5 +1,5 @@
-import { TextButton } from "../../button/TextButon"
-import { BrandsList } from "../../list/BrandsList"
+import { TextButton } from "../general/button/TextButon"
+import { BrandsList } from "./BrandsList"
 
 interface Props {
     brands: string[] | undefined,
@@ -20,7 +20,7 @@ export const Filter = ({ brands, submit, filters, resetfilter }: Props) => {
                     brands 
                         ? <BrandsList brands={brands} />
                         : ""
-                }
+                }   
                 <button 
                     type="submit"
                     className="w-full py-2 cursor-pointer duration-200

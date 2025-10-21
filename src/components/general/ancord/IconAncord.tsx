@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom"
-import { useDarkMode } from "../../utils/context/ThemesContext"
+import { useDarkMode } from "../../../utils/context/ThemesContext"
 
 interface Props{
     text: string,

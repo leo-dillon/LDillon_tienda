@@ -1,6 +1,6 @@
-import { Banner } from "../banner/Banner"
-import { NewSlatter } from "../banner/NewSlatter"
-import { FeatureGrid } from "../section/FeatureGrid"
+import { Banner } from "../home/banner/Banner"
+import { NewSlatter } from "../home/banner/NewSlatter"
+import { FeatureGrid } from "../home/FeatureGrid"
 
 export const Home = () => {
     return(

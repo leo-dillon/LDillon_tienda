@@ -1,8 +1,8 @@
 import logo from "/image/LDillon/logo/lightLogo.svg"
 import darkLogo from "/image/LDillon/logo/darkLogo.svg"
 
-import { Nav } from "../nav/Nav"
-import { IconAncord } from "../ancord/IconAncord"
+import { Nav } from "./nav/Nav"
+import { IconAncord } from "../../general/ancord/IconAncord"
 
 export const Header = () => {
     return (

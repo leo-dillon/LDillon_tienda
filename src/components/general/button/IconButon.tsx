@@ -1,17 +1,17 @@
-import { useDarkMode } from "../../utils/context/ThemesContext"
+import { useDarkMode } from "../../../utils/context/ThemesContext"
 
-interface Props{
+interface Props<T = void>{
     text: string,
     img: string
     darkImg : string
-    onClick: () => void
+    onClick: (arg?: T) => void
 }
 
-export const InconButton = ({ text, img, darkImg, onClick }: Props ) => {
+export const InconButton = <T,>({ text, img, darkImg, onClick }: Props<T> ) => {
     const { isDark } = useDarkMode()
     return (
         <button 
-            onClick={() => onClick()} 
+            onClick={() => onClick?.()} 
             className="px-2 py-2 duration-100 cursor-pointer
                 flex items-center justify-center
                 hover:scale-110

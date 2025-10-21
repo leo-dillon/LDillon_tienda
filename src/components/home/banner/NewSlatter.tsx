@@ -1,4 +1,4 @@
-import { TextButton } from "../button/TextButon"
+import { TextButton } from "../../general/button/TextButon"
 
 interface Props {
     img: number

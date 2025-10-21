@@ -1,5 +1,5 @@
-import { Title_h1 } from "../H/Ttile_h1"
-import { AllProducts } from "../section/products/AllProducts"
+import { Title_h1 } from "../general/H/Ttile_h1"
+import { AllProducts } from "../tienda/AllProducts"
 
 export const Tienda = () => {
     

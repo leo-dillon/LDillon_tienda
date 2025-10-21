@@ -1,5 +1,5 @@
-import { InconButton } from "../button/IconButon"
-import { useDarkMode } from "../../utils/context/ThemesContext"
+import { InconButton } from "../../../general/button/IconButon"
+import { useDarkMode } from "../../../../utils/context/ThemesContext"
 
 import moon from "/icons/icon-moon.svg"
 import sun from "/icons/icon-sun.svg"

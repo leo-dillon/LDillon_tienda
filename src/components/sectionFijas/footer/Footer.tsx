@@ -1,12 +1,12 @@
-import { LDillon_footer } from "../Ldillon/LDillon_footer"
-import { TextAncord } from "../ancord/TextAncord"
-import { IconAncord } from "../ancord/IconAncord"
+import { LDillon_footer } from "../../Ldillon/LDillon_footer"
+import { TextAncord } from "../../general/ancord/TextAncord"
+import { IconAncord } from "../../general/ancord/IconAncord"
 
-import instagram from "/icons/redes/instagram.svg"
-import brandDarkGithub from "/icons/redes/brand-dark-github.svg"
-import brandGithub from "/icons/redes/brand-github.svg"
-import brandDarkLinkedin from "/icons/redes/brand-dark-linkedin.svg"
-import brandLinkedin from "/icons/redes/brand-linkedin.svg"
+import instagram            from "/icons/redes/instagram.svg"
+import brandDarkGithub      from "/icons/redes/brand-dark-github.svg"
+import brandGithub          from "/icons/redes/brand-github.svg"
+import brandDarkLinkedin    from "/icons/redes/brand-dark-linkedin.svg"
+import brandLinkedin        from "/icons/redes/brand-linkedin.svg"
 
 export const Footer = () => {
     return (
