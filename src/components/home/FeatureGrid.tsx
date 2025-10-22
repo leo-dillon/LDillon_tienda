@@ -11,10 +11,10 @@ export const FeatureGrid = () => {
     const { isDark } = useDarkMode()
 
     return (
-        <section className="">
-            <div className="w-full max-w-[1000px] mx-auto flex flex-row flex-wrap justify-around items-center space-y-3">
-                <div className=" px-4 py-2
-                    flex flex-row items-center gap-4 rounded 
+        <section>
+            <div className="w-full max-w-[1000px] mx-auto flex flex-row flex-wrap justify-between items-center">
+                <div className=" px-4 py-8 border-1 border-amber-100 rounded-2xl
+                    flex flex-row items-center gap-4
                 ">
                     <img src={ isDark ? truck : darkTruck } alt="Envios Gratis a todo el país" className="w-14 opacity-80"/>
                     <div className="flex flex-col gap-2 text-stone-800 dark:text-stone-200">
@@ -22,8 +22,8 @@ export const FeatureGrid = () => {
                         <p className="w-full max-w-[200px] opacity-90">En todos nuestros productos y a todo el país</p>
                     </div>
                 </div>
-                <div className=" px-4 py-2
-                    flex flex-row items-center gap-4 rounded 
+                <div className=" px-4 py-8 border-1 border-amber-100 rounded-2xl
+                    flex flex-row items-center gap-4
                 ">
                     <img src={ isDark ? coin : darkCoin } alt="Envios Gratis a todo el país" className="w-14 opacity-80"/>
                     <div className="flex flex-col gap-2 text-stone-800 dark:text-stone-200">
@@ -31,8 +31,8 @@ export const FeatureGrid = () => {
                         <p className="w-full max-w-[200px] opacity-90">Garantia de 30 días en todos nuestros productos</p>
                     </div>
                 </div>
-                <div className=" px-4 py-2
-                    flex flex-row items-center gap-4 rounded 
+                <div className=" px-4 py-8 border-1 border-amber-100 rounded-2xl
+                    flex flex-row items-center gap-4
                 ">
                     <img src={ isDark ? movile : darkMovile } alt="Envios Gratis a todo el país" className="w-14 opacity-80"/>
                     <div className="flex flex-col gap-2 text-stone-800 dark:text-stone-200">

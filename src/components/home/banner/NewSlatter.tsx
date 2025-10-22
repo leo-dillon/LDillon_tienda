@@ -1,12 +1,8 @@
 import { TextButton } from "../../general/button/TextButon"
 
-interface Props {
-    img: number
-}
 
-export const NewSlatter = ( {img}: Props ) => {
+export const NewSlatter = ( ) => {
 
-    const newSlatters_img: string[] = ["newSlatter.webp"]
 
     const submit = () => {
         console.log('submit Subscripción')
@@ -18,7 +14,7 @@ export const NewSlatter = ( {img}: Props ) => {
             text-stone-800
             dark:text-stone-100
         ">
-            <div className={`absolute inset-0 -z-10 bg-[url('/image/banners/${newSlatters_img[img]}')] bg-cover bg-center h-full`}></div>
+            <div className={`absolute inset-0 -z-10 bg-[url('/image/banners/newSlatter.webp')] bg-cover bg-center h-full`}></div>
             <div className="absolute inset-0 -z-1 bg-black opacity-60"></div>
             <div className="w-full max-w-[500px] px-4 py-6 ml-32
                 flex flex-col gap-6

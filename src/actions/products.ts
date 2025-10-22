@@ -1,5 +1,6 @@
 import { supabase } from "../supabase/client"
 import type { Database } from "../supabase/supabase"
+import { mostrar } from "../utils/mostrar"
 
 export type Products_types = Database['public']['Tables']['products']['Row']
 export type Variants_types = Database['public']['Tables']['variants']['Row']
@@ -46,3 +47,35 @@ export const countProduct = async () => {
     if( count == null ) return 1 
     return Math.ceil( count / 8 )
 }
+
+export const getLastProducts = async () => {
+    const query = supabase
+        .from("products")
+        .select("*, variants(*)")
+        .order('created_at', {ascending: true})
+        .limit(4)
+    
+    const { data: products, error } = await query
+
+    if( error ){
+        mostrar("lastProducts --- ", error)
+        throw new Error(error.message)
+    }
+
+    return products as ( Products_Variants_types[] )
+} 
+
+export const getRandomProducts = async () => {
+    const query = (supabase as any)
+        .rpc("random_products" , { limit_count: 4 })
+        .select('*, variants(*)')
+
+    const { data: products, error } = await query
+
+    if( error ){
+        mostrar("getRandomProduct --- ", error)
+        throw new Error(error.message)
+    }
+
+    return products as ( Products_Variants_types[] )
+} 

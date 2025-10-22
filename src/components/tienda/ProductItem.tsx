@@ -28,7 +28,7 @@ export const ProductItem = ({ product }: Props) => {
                         return(
                             <span 
                                 key={vari.id} 
-                                className={`w-4 h-4 rounded-full cursor-pointer`}
+                                className={`w-4 h-4 rounded-full cursor-pointer hover:scale-120 duration-200`}
                                 style={{ backgroundColor: vari.color }}
                                 onClick={() => {setColor(vari.color)}}
                             ></span>
