@@ -9,7 +9,7 @@ export type Products_Variants_types = (Products_types & { variants: Variants_typ
 interface Props {
     filters?: string[],
     page?: number,
-
+    slug: string
 }
 
 export const getProducts = async ({ filters = [], page = 1 }: Props): Promise<(Products_Variants_types)[]> => {
@@ -35,17 +35,21 @@ export const getProducts = async ({ filters = [], page = 1 }: Props): Promise<(P
         throw new Error(error.message)
     }
 
-    return products as ( Products_Variants_types )[]
+    return products as ( Products_Variants_types[] )
 }
 
-export const countProduct = async () => {
-    const query = supabase
+export const countProduct = async ({ filters = [] }: Props) => {
+    let query = supabase
         .from("products")
         .select("*", { count: "exact", head: true })
 
+    if (filters.length > 0) {
+        query = query.in("brand", filters)
+    }
+
     const { count } = await query
     if( count == null ) return 1 
-    return Math.ceil( count / 8 )
+    return count
 }
 
 export const getLastProducts = async () => {
@@ -79,3 +83,16 @@ export const getRandomProducts = async () => {
 
     return products as ( Products_Variants_types[] )
 } 
+
+export const getProduct = async ({ slug }: Props) => {
+    const query = supabase
+        .from('products')
+        .select('* variants(*)')
+        .eq('slug', slug)
+
+        const { data, error } = await query
+
+        console.log(data)
+
+
+}

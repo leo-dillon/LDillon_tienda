@@ -2,12 +2,11 @@ import { TextButton } from "../general/button/TextButon"
 import { BrandsList } from "./BrandsList"
 
 interface Props {
-    brands: string[] | undefined,
     submit: (e: React.FormEvent<HTMLFormElement>) => void,
     filters: string[],
     resetfilter: () => void
 }
-export const Filter = ({ brands, submit, filters, resetfilter }: Props) => {
+export const Filter = ({ submit, filters, resetfilter }: Props) => {
     return (
         <div className="
             w-full max-w-[300px] px-2 h-fit
@@ -16,11 +15,7 @@ export const Filter = ({ brands, submit, filters, resetfilter }: Props) => {
             <h3 className="text-2xl font-semibold flex justify-center py-3">Filtros</h3>
             <form action="" className="border-t-1 border-stone-300 dark:border-stone-700 py-2" onSubmit={(e) => submit(e)}>
                 <p className="text-xl font-semibold mb-4 ml-2"> { filters.length > 0 ? "Marcas Seleccionadas": "Marcas" } : </p>
-                { 
-                    brands 
-                        ? <BrandsList brands={brands} />
-                        : ""
-                }   
+                <BrandsList/>
                 <button 
                     type="submit"
                     className="w-full py-2 cursor-pointer duration-200

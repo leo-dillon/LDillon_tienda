@@ -2,11 +2,11 @@ import type { Products_Variants_types } from "../../actions/products"
 import { ProductItem } from "./ProductItem"
 
 interface Props {
-    products: Products_Variants_types[]
+    products: Products_Variants_types[],
+    cantidad: number
 }
 
-export const ProductsList = ({products}: Props) => {
-    const cantidad: number = ( products ) ? products.length : 0
+export const ProductsList = ({products, cantidad}: Props) => {
     return (
         <>  
 

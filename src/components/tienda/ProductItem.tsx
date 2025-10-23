@@ -37,9 +37,9 @@ export const ProductItem = ({ product }: Props) => {
                     }
                 </div>
             </div>
-            <Link to={"/producto/" + product.id} className="w-full bg-stone-700 py-2 text-center rounded" > Saber Más </Link>
+            <Link to={"/producto/" + product.slug} className="w-full bg-stone-700 py-2 text-center rounded" > Saber Más </Link>
             <span 
-                className={`absolute top-1 left-1 w-8 h-8 rounded-full cursor-pointer border-1 border-stone-600/50`}
+                className={`absolute top-1 left-1 w-8 h-8 rounded-full border-1 border-stone-600/50`}
                 style={{ backgroundColor: color }}
             ></span>
         </li>

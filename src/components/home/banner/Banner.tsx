@@ -13,7 +13,7 @@ export const Banner = () => {
             <div className="absolute inset-0 -z-1 bg-black opacity-60"></div>
             <h2 className="text-5xl font-bold"> Los mejores celulares de { year } </h2>
             <p className="text-2xl font-bold opacity-80">Descubre las mejores ofertas y las ultimas novedades en celulares</p>
-            <Link to="/tienda" className="bg-zinc-800 px-3 py-2 duration-200
+            <Link to="/tienda?page=1" className="bg-zinc-800 px-3 py-2 duration-200
                 text-xl rounded
                 hover:bg-zinc-700 hover:scale-105
                 active:scale-90

@@ -1,4 +1,4 @@
-import { useCountPages } from "../../hooks/products/useCountPages"
+import { useCountProducts } from "../../hooks/products/useCountProdcuts"
 import { InconButton } from "../general/button/IconButon"
 
 import arrow from "/icons/arrow-narrow-up.svg"
@@ -6,12 +6,13 @@ import darkArrow from "/icons/dark-arrow-narrow-up.svg"
 
 interface Props {
     page: number,
-    changePage: (x: number) => void
+    changePage: (x: number) => void,
+    filters?: string[]
 }
 
 
-export const Pagination = ({ page, changePage }: Props) => {
-    const { dataCountPage, isLoading, error } = useCountPages()
+export const Pagination = ({ page, changePage, filters }: Props) => {
+    const { dataCountPage, isLoading, error } = useCountProducts({ filters })
 
     const previousPage = () => {
         if( page > 1 ){
@@ -25,6 +26,7 @@ export const Pagination = ({ page, changePage }: Props) => {
             changePage( newpage )
         }
     }
+
     return (
         <div className="w-fit mx-auto flex flex-row flex-nowrap">
             <div className={ `-rotate-90` }>
@@ -35,7 +37,7 @@ export const Pagination = ({ page, changePage }: Props) => {
                     isLoading 
                      ? <p>cargando ...</p>
                      : dataCountPage 
-                        ? dataCountPage.map( (data, index) => {
+                        ? dataCountPage.pages.map( (data, index) => {
                             return (
                                 <span 
                                     className="w-4 h-4 flex justify-center items-center cursor-pointer
@@ -54,7 +56,7 @@ export const Pagination = ({ page, changePage }: Props) => {
                 }
             </div>
             <div className={ `${(page == 1) ? "disabled:opacity-50" : ""} rotate-90` }>
-                <InconButton<number> text="Volver atras" img={darkArrow} darkImg={arrow} onClick={() => nextPage((dataCountPage) ? dataCountPage.length : 1)}/>
+                <InconButton<number> text="Volver atras" img={darkArrow} darkImg={arrow} onClick={() => nextPage((dataCountPage?.pages) ? dataCountPage?.pages.length : 1)}/>
             </div>
         </div>
     )

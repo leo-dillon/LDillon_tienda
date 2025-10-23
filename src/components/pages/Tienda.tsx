@@ -2,8 +2,6 @@ import { Title_h1 } from "../general/H/Ttile_h1"
 import { AllProducts } from "../tienda/AllProducts"
 
 export const Tienda = () => {
-    
-
 
     return (
         <div className="">
