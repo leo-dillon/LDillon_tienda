@@ -9,6 +9,9 @@ export type Products_Variants_types = (Products_types & { variants: Variants_typ
 interface Props {
     filters?: string[],
     page?: number,
+}
+
+interface Props2 {
     slug: string
 }
 
@@ -84,15 +87,20 @@ export const getRandomProducts = async () => {
     return products as ( Products_Variants_types[] )
 } 
 
-export const getProduct = async ({ slug }: Props) => {
+export const getProduct = async ({ slug }: Props2) => {
     const query = supabase
         .from('products')
-        .select('* variants(*)')
+        .select('*, variants(*)')
         .eq('slug', slug)
 
         const { data, error } = await query
 
-        console.log(data)
+        if(error) {
+        console.error(error.message)
+        throw new Error(error.message)
+        }
+
+        return data
 
 
 }
