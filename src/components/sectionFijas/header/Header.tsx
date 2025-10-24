@@ -4,7 +4,12 @@ import darkLogo from "/image/LDillon/logo/darkLogo.svg"
 import { Nav } from "./nav/Nav"
 import { IconAncord } from "../../general/ancord/IconAncord"
 
-export const Header = () => {
+interface Props {
+    changeIsOpen: (txt: string) => void
+}
+
+export const Header = ({changeIsOpen}: Props ) => {
+
     return (
         <header
             className="w-full px-8 py-4 bg-zinc-300 dark:bg-zinc-800
@@ -19,7 +24,7 @@ export const Header = () => {
                     Tienda - LDillon 
                 </h1>
             </div>
-            <Nav />
+            <Nav changeIsOpen={changeIsOpen} />
         </header>
     )
 }
