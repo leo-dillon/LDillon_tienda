@@ -8,6 +8,7 @@ interface Props{
 
 export const RandomProducts = ({ text }: Props) => {
     const { dataProducts, isLoading, error } = useRandomProducts()
+    const cantidad = ( dataProducts ) ? dataProducts?.length : 0
     return (
         <section>
             <div className="w-full max-w-[1000px] mx-auto flex flex-col flex-wrap jusitfy-center space-y-3">
@@ -15,7 +16,7 @@ export const RandomProducts = ({ text }: Props) => {
                 <div className="dark:text-stone-200 text-stone-800">
                     {
                         ( !isLoading && dataProducts )
-                        ? <ProductsList products={dataProducts}/>
+                        ? <ProductsList products={dataProducts} cantidad={cantidad}/>
                         : ( error )
                             ? <p> Error al encontrar productos </p>
                             : <p> Cargando ...  </p>
