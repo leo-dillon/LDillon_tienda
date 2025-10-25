@@ -9,6 +9,8 @@ import store from "/icons/store.svg"
 import darkStore from "/icons/dark-store.svg"
 import user from "/icons/user.svg"
 import darkUser from "/icons/dark-user.svg"
+import search from "/icons/search.svg"
+import darkSearch from "/icons/dark-search.svg"
 
 interface Props {
     changeIsOpen: (txt: string) => void
@@ -20,6 +22,7 @@ export const Nav = ( {changeIsOpen}: Props ) => {
         <nav className="flex">
             <InconButton text="Cambiar tema" img={moon} darkImg={sun} onClick={toggleTheme} />
             <IconAncord text="Iniciar Sesión" img={darkUser} darkImg={user} to="#"/>
+            <InconButton text="Busqueda por nombre" img={ darkSearch } darkImg={ search } onClick={() => {changeIsOpen('search')}} />
             <div className="relative">
                 <InconButton text="Ir a Carrito" img={darkStore} darkImg={store} onClick={() => {changeIsOpen("store")}} />
                 <span 

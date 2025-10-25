@@ -29,7 +29,7 @@ export const Modal = ({isOpen, changeIsOpen}: Props ) => {
     return (
         <div 
             className={`
-                fixed top-0 w-screen h-screen bg-stone-900/20 duration-200
+                fixed top-0 w-screen h-screen bg-stone-900/20 duration-200 backdrop-blur-xs border-l border-stone-200
                 ${
                     isOpen.isOpen 
                     ? "left-0 flex justify-end z-10" 

@@ -101,6 +101,20 @@ export const getProduct = async ({ slug }: Props2) => {
         }
 
         return data
+}
 
+export const getProductsByName = async (name : string) => {
+    const query = supabase
+        .from('products')
+        .select('*, varinats(*)')
+        .ilike('name', `%${name}%`)
 
+    const { data, error } = await query
+
+    if( error ){
+        console.error(error.message)
+        throw new Error(error.message)
+    }
+
+    return data
 }
